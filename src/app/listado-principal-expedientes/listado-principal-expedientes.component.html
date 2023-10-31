@@ -1,0 +1,112 @@
+<h2>Listado principal de Expedientes</h2>
+<mat-card class="w-75 p-d-flex p-ai-center p-flex-column p-jc-between">
+<mat-card-content >
+  <form [formGroup]="formulario" class="w-100 p-d-flex p-flex-column p-ai-center ng-untouched ng-pristine ng-valid">
+    <div formGroupName="parametrosBusqueda" class="w-100 p-d-flex p-jc-between p-flex-wrap">
+
+
+
+      <mat-form-field class="example-full-width">
+
+        <mat-label>Texto a buscar</mat-label>
+        <input matInput type="text" formControlName="textoLibre">
+      </mat-form-field>
+
+
+
+      <br>
+
+      <mat-form-field>
+        <mat-label>tipo expediente</mat-label>
+        <mat-select [formControl]="selectedOption" formControlName="tipoExp"
+          (selectionChange)="getTipoExpedientes($event)" [value]="tipoExpedientes" name="tipoExpediente"
+          id="tipoExpediente">
+          <mat-option *ngFor="let tipo of tipoExpedientes" [value]="tipo.extExpedientetipoid">
+            {{tipo.extExpedientetipoid}}-{{tipo.extDescripcion}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <fieldset>
+
+        <legend>Coordenadas</legend>
+        <table class="w-100">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+
+                <mat-label>Coordenada X</mat-label>
+                <input matInput type="text" formControlName="coordenadaX">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+
+                <mat-label>Coordenada X</mat-label>
+                <input matInput type="text" formControlName="coordenadaX">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+
+
+
+
+      </fieldset>
+
+
+
+      <mat-slide-toggle color="primary">Iniciados</mat-slide-toggle>
+
+
+      <button mat-raised-button color="primary" (click)="enviarFormulario(busqueda)">Enviar</button>
+
+    </div>
+  </form>
+</mat-card-content>
+</mat-card>
+
+
+<div>
+
+  <h2>Listado principal de Expedientes 2</h2>
+  <table mat-table [dataSource]="datosExpediente" class="w-100">
+    <ng-container matColumnDef="expediente">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> EXPEDIENTE </th>
+      <td mat-cell *matCellDef="let element"> {{element.expExpedienteid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="igf">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> IGF </th>
+      <td mat-cell *matCellDef="let element"> {{element.expIgf}} </td>
+    </ng-container>
+    <ng-container matColumnDef="tipoExpediente">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> TIPO DE EXPEDIENTE </th>
+      <td mat-cell *matCellDef="let element"> {{element.extExpedientetipoid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> ESTADO</th>
+      <td mat-cell *matCellDef="let element"> {{element.exeExpedienteestadoid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="finca">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> FINCA</th>
+      <td mat-cell *matCellDef="let element"> {{element.finFincaid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fechaInicio">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> FECHA INICIO</th>
+      <td mat-cell *matCellDef="let element">{{element.expFechainicio}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fechaPrevistaFin">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> FECHA PREV FIN</th>
+      <td mat-cell *matCellDef="let element">{{element.expFechaprevistafin}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fechaFin">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> FECHA FIN</th>
+      <td mat-cell *matCellDef="let element">{{element.expFechafin}} </td>
+    </ng-container>
+    <ng-container matColumnDef="provincia">
+      <th mat-header-cell *matHeaderCellDef class="text-align-center"> PROVINCIA</th>
+      <td mat-cell *matCellDef="let element"> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

@@ -1,0 +1,115 @@
+
+    .ui-panelmenu {
+        .ui-icon {
+            position: static;
+        }
+
+        .ui-panelmenu-header {
+            padding: 0;
+
+            > a {
+                border: $panelHeaderBorder;
+                background-color: $panelHeaderBgColor;
+                color: $panelHeaderTextColor;
+                padding: $menuitemPadding;
+                font-weight: $panelHeaderFontWeight;
+                position: static;
+                font-size: $fontSize;
+                @include border-radius($borderRadius);
+                @include transition($panelHeaderTransition);
+
+                .ui-panelmenu-icon {
+                    color: $panelHeaderIconColor;
+                }
+
+                &:focus {
+                  //  @include focused();
+                }
+            }
+
+            &:not(.ui-state-active) {
+                > a:hover {
+                    outline: 0 none;
+                    border: $panelHeaderHoverBorder;
+                    background-color: $panelHeaderHoverBgColor;
+                    color: $panelHeaderHoverTextColor;
+
+                    .ui-panelmenu-icon {
+                        color: $panelHeaderHoverIconColor;
+                    }
+                }
+            }
+
+            &.ui-state-active {
+                > a {
+                    border: $panelHeaderActiveBorder;
+                    background-color: $panelHeaderActiveBgColor;
+                    color: $panelHeaderActiveTextColor;
+                    @include border-radius-bottom(0);
+
+                    .ui-panelmenu-icon {
+                        color: $panelHeaderActiveIconColor;
+                    }
+
+                    &:hover {
+                        outline: 0 none;
+                        border: $panelHeaderActiveHoverBorder;
+                        background-color: $panelHeaderActiveHoverBgColor;
+                        color: $panelHeaderActiveHoverTextColor;
+
+                        .ui-panelmenu-icon {
+                            color: $panelHeaderActiveHoverIconColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ui-panelmenu-panel {
+            margin-top: $accordionSpacing;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .ui-panelmenu-content {
+            padding: $menuPadding;
+            background-color: $menuBgColor;
+            border: $menuBorder;
+            margin-top: 0;
+            position: static;
+            border-top: 0 none;
+
+            .ui-menuitem {
+                margin: $menuitemMargin;
+
+                .ui-menuitem-link {
+                    padding: $menuitemPadding;
+                    color: $menuitemTextColor;
+
+                    &:hover {
+                        background-color: $menuitemHoverBgColor;
+
+                        .ui-menuitem-icon, .ui-panelmenu-icon {
+                            color: $menuitemHoverIconColor;
+                        }
+
+                        .ui-menuitem-text {
+                            color: $menuitemHoverTextColor;
+                        }
+                    }
+
+                    &.ui-menuitem-link-active {
+                        .ui-menuitem-text {
+                            color: $menuitemRouterLinkActiveTextColor;
+                        }
+
+                        .ui-menuitem-icon {
+                            color: $menuitemRouterLinkActiveIconColor;
+                        }
+                    }
+                }
+            }
+        }
+    }

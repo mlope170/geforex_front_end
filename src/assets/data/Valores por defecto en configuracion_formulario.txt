@@ -1,0 +1,17 @@
+texto_bandera_header:
+JUNTA DE EXTREMADURA
+
+texto_encabezado_header:
+Conserjeria de
+ Agricultura, Desarrollo Rural, Poblaciión y Territorio
+ Dirección General de Política Forestal.
+
+bandera_header:
+"assets/images/bandera.png"
+
+texto_financiacion:
+"«Plan de Recuperación, Transformación y Resiliencia - Financiado por la Unión Europea – NextGenerationEU»"
+
+
+
+

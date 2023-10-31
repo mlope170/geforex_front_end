@@ -1,0 +1,196 @@
+.ui-table {
+    .ui-table-caption,
+    .ui-table-summary {
+        background-color: $bgColorPanelTable;
+        color: $colorHeaderPanelTable;
+        border: $borderHeaderPanelTable;
+        padding: $panelHeaderPadding;
+        text-align: center;
+    }
+
+    .ui-table-caption {
+        border-bottom: 0 none;
+        font-weight: $tableCaptionFontWeight;
+    }
+
+    .ui-table-summary {
+        border-top: 0 none;
+        font-weight: $tableSummaryFontWeight;
+    }
+
+    .ui-table-thead > tr > th {
+        padding: $tableHeaderCellPadding;
+        border: $tableHeaderCellBorder;
+        font-weight: $tableHeaderCellFontWeight;
+        color: $tableHeaderCellTextColor;
+        background-color: $tableHeaderCellBgColor;
+    }
+
+    .ui-table-tbody > tr > td {
+        padding: $tableBodyCellPadding;
+    }
+
+    .ui-table-tfoot > tr > td {
+        padding: $tableFooterCellPadding;
+        border: $tableFooterCellBorder;
+        font-weight: $tableFooterCellFontWeight;
+        color: $tableFooterCellTextColor;
+        background-color: $tableFooterCellBgColor;
+    }
+
+    .ui-sortable-column {
+        @include transition(box-shadow $transitionDuration);
+
+        &:focus {
+            @include focused-listitem();
+        }
+
+        .ui-sortable-column-icon {
+            color: $tableHeaderCellIconColor;
+        }
+
+        &:not(.ui-state-highlight):hover {
+            background-color: $tableHeaderCellHoverBgColor;
+            color: $tableHeaderCellHoverTextColor;
+
+            .ui-sortable-column-icon {
+                color: $tableHeaderCellHoverIconColor;
+            }
+        }
+
+        &.ui-state-highlight {
+            background-color: $highlightBgColor;
+            color: $highlightColorText;
+
+            .ui-sortable-column-icon {
+                color: $highlightColorText;
+            }
+        }
+    }
+
+    .ui-editable-column {
+        input {
+            font-size: $fontSize;
+            font-family: $fontFamily;
+
+            &:focus {
+                outline: 1px solid $inputFocusBorderColor;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    .ui-table-tbody {
+        > tr {
+            background-color: $tableBodyRowBgColor;
+            color: $tableBodyRowTextColor;
+            @include transition(background-color $transitionDuration, box-shadow $transitionDuration);
+
+            > td {
+                background-color: inherit;
+                border: $tableBodyCellBorder;
+                @include transition(box-shadow $transitionDuration);
+            }
+
+            &.ui-state-highlight {
+                background-color: $highlightBgColor;
+                color: $highlightColorText;
+
+                a {
+                    color: $highlightColorText;
+                }
+            }
+
+            &.ui-table-dragpoint-top > td {
+                @include shadow(inset 0 2px 0 0 $highlightBgColor);
+            }
+
+            &.ui-table-dragpoint-bottom > td {
+                @include shadow(inset 0 -2px 0 0 $highlightBgColor);
+            }
+
+            &:focus {
+                outline: none;
+
+                + tr > td {
+                    box-shadow: 0 -.2em 0 0 $focusOutlineColor;
+                }
+
+                > td {
+                    box-shadow: 0 -.2em 0 0 $focusOutlineColor, 0 .2em 0 0 $focusOutlineColor;
+                }
+
+                > td:first-child {
+                    box-shadow: 0 -0.2em 0 0 $focusOutlineColor, 0 0.2em 0 0 $focusOutlineColor, -0.1em -0.1em 0 0.1em $focusOutlineColor;
+                }
+
+                > td:last-child {
+                    box-shadow: 0 -0.2em 0 0 $focusOutlineColor, 0 0.2em 0 0 $focusOutlineColor, 0.1em -0.1em 0 0.1em $focusOutlineColor;
+                }
+            }
+        }
+
+        > tr:nth-child(even) {
+            background-color: $tableBodyRowEvenBgColor;
+
+            &.ui-state-highlight {
+                background-color: $highlightBgColor;
+                color: $highlightColorText;
+
+                a {
+                    color: $highlightColorText;
+                }
+            }
+        }
+    }
+
+    &.ui-table-hoverable-rows {
+        .ui-table-tbody > tr.ui-selectable-row:not(.ui-state-highlight):hover {
+            cursor: pointer;
+            background-color: $tableBodyRowHoverBgColor;
+            color: $tableBodyRowHoverTextColor;
+        }
+    }
+
+    .ui-column-resizer-helper {
+        background-color: $tableResizerHelperBgColor;
+    }
+}
+
+@media screen and (max-width: 40em) {
+    .ui-table {
+        &.ui-table-responsive {
+            .ui-paginator-top {
+                border-bottom: $paginatorBorder;
+            }
+
+            .ui-paginator-bottom {
+                border-top: $paginatorBorder;
+            }
+
+            .ui-table-tbody > tr {
+                td {
+                    border: 0 none;
+                }
+
+                &:focus {
+                    + tr > td {
+                        box-shadow: none;
+                    }
+
+                    > td {
+                        box-shadow: none;
+                    }
+
+                    > td:first-child {
+                        box-shadow: none;
+                    }
+
+                    > td:last-child {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+
+<div class="dialog-wrapper">
+
+  <mat-dialog-content>
+    <mat-error *ngIf="!setCodigoVal">Código obligatorio</mat-error>
+    <mat-error *ngIf="!setDescripcionVal">Descripción obligatorio</mat-error>
+
+    <form [formGroup]="camposEditar" class="w-100 p-d-flex p-flex-column p-ai-center ng-untouched ng-pristine ng-valid">
+      <!-- <div formGroupName="camposEditar" class="w-100 p-d-flex p-jc-between p-flex-wrap"> -->
+
+      <input matInput type="number" formControlName="id" [hidden]="true">
+      <mat-form-field>
+        <mat-label>Código del servicio territorial</mat-label>
+        <input matInput type="text" formControlName="setCodigo">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Descripción del servicio territorial</mat-label>
+        <input matInput type="text" formControlName="setDescripcion" >
+      </mat-form-field>
+
+      <!-- </div> -->
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" cdkFocusInitial>Cancelar</button>
+    <!-- <button mat-button (click)="actualizarEspecie(data.id)" [mat-dialog-close]="data" cdkFocusInitial>Guardar</button> -->
+    <button mat-button (click)="actualizarServiciosTerritoriales(data.id)" >Guardar</button>
+    <button mat-button [disabled]="noDelete" (click)="eliminarServiciosTerritoriales(data.id)"
+      cdkFocusInitial>Eliminar</button>
+  </mat-dialog-actions>
+</div>

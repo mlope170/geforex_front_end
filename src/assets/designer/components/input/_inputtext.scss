@@ -1,0 +1,25 @@
+.ui-inputtext {
+    font-size: $fontSize;
+    color: $textColor;
+    background: $inputBgColor;
+    padding: $inputPadding;
+    border: $inputBorder;
+    @include transition($inputTransition);
+    @include appearance(none);
+
+    &.ng-dirty.ng-invalid {
+        border: $inputErrorBorder;
+    }
+
+    &:enabled:hover:not(.ui-state-error) {
+        border-color: $inputHoverBorderColor;
+    }
+
+    &:enabled:focus:not(.ui-state-error) {
+        @include focused-input();
+    }
+}
+
+p-inputmask.ng-dirty.ng-invalid > .ui-inputtext {
+    border: $inputErrorBorder;
+}

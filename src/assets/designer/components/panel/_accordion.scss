@@ -1,0 +1,68 @@
+.ui-accordion {
+    .ui-accordion-header {
+        margin-bottom: $accordionSpacing;
+
+        a {
+            padding: $panelHeaderPadding;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            background-color: $panelHeaderBgColor;
+            color: $panelHeaderTextColor;
+            font-weight: $panelHeaderFontWeight;
+            @include border-radius($borderRadius);
+            @include transition($panelHeaderTransition);
+
+            .ui-accordion-toggle-icon {
+                color: $panelHeaderIconColor;
+            }
+
+            &:focus {
+                @include focused();
+            }
+        }
+
+        &:not(.ui-state-active):not(.ui-state-disabled):hover {
+            a {
+                background-color: $panelHeaderHoverBgColor;
+                border: $panelHeaderHoverBorder;
+                color: $panelHeaderHoverTextColor;
+
+                .ui-accordion-toggle-icon {
+                    color: $panelHeaderHoverIconColor;
+                }
+            }
+        }
+
+        &:not(.ui-state-disabled).ui-state-active {
+            a {
+                background-color: $panelHeaderActiveBgColor;
+                border: $panelHeaderActiveBorder;
+                color: $panelHeaderActiveTextColor;
+                
+                .ui-accordion-toggle-icon {
+                    color: $panelHeaderActiveIconColor;
+                }
+            }
+
+            &:hover {
+                a {
+                    border: $panelHeaderActiveHoverBorder;
+                    background-color: $panelHeaderActiveHoverBgColor;
+                    color: $panelHeaderActiveHoverTextColor;
+                    
+                    .ui-accordion-toggle-icon {
+                        color: $panelHeaderActiveHoverIconColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-accordion-content {
+        padding: $panelContentPadding;
+        border: $panelContentBorder;
+        background-color: $panelContentBgColor;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+    }
+}

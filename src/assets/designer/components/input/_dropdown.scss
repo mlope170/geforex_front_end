@@ -1,0 +1,94 @@
+.ui-dropdown {
+    background: $inputBgColor;
+    border: $inputBorder;
+    @include transition($inputTransition);
+
+    &:not(.ui-state-disabled):hover {
+        border-color: $inputHoverBorderColor;
+    }
+
+    &:not(.ui-state-disabled).ui-state-focus {
+        @include focused-input();
+    }
+
+    .ui-dropdown-label {
+        padding-right: 2em;
+
+        .ui-placeholder {
+            color: $inputPlaceholderTextColor;
+        }
+    }
+
+    .ui-dropdown-trigger {
+        background-color: $inputBgColor;
+        width: 2em;
+        line-height: 2em;
+        text-align: center;
+        padding: 0;
+        color: $inputDropdownIconColor;
+    }
+
+    .ui-dropdown-clear-icon {
+        color: $inputDropdownIconColor;
+    }
+
+    &.ui-dropdown-clearable {
+        .ui-dropdown-label {
+            padding-right: 4em;
+        }
+    }
+}
+
+.ui-dropdown-panel {
+    padding: 0;
+    border: $inputOverlayBorder;
+    background-color: $inputListBgColor;
+    @include shadow($inputOverlayShadow);
+
+    .ui-dropdown-filter-container {
+        padding: $inputListHeaderPaddingTop $inputListHeaderPaddingRight $inputListHeaderPaddingBottom $inputListHeaderPaddingLeft;
+        border-bottom: $inputListHeaderBorder;
+        color: $inputListHeaderTextColor;
+        background-color: $inputListHeaderBgColor;
+        margin: $inputListHeaderMargin;
+
+        .ui-dropdown-filter {
+            width: 100%;
+            padding-right: 2em;
+        }
+
+        .ui-dropdown-filter-icon {
+            top: 50%;
+            margin-top: -.5em;
+            right: $inputListHeaderPaddingRight + .5em;
+            color: $inputListHeaderSearchIconColor;
+        }
+    }
+
+    .ui-dropdown-items {
+        padding: $inputListPadding;
+
+        .ui-dropdown-item, .ui-dropdown-item-group {
+            margin: $inputListItemMargin;
+            padding: $inputListItemPadding;
+            border: $inputListItemBorder;
+            color: $inputListItemTextColor;
+            background-color: $inputListItemBgColor;
+            @include border-radius(0);
+
+            &.ui-state-highlight {
+                color: $inputListItemHighlightTextColor;
+                background-color: $inputListItemHighlightBgColor;
+            }
+
+            &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+                color: $inputListItemHoverTextColor;
+                background-color: $inputListItemHoverBgColor;
+            }
+        }
+    }
+}
+
+p-dropdown.ng-dirty.ng-invalid > .ui-dropdown {
+    border: $inputErrorBorder;
+}

@@ -1,0 +1,97 @@
+.ui-autocomplete {
+    .ui-autocomplete-input {
+        padding: $inputPadding;
+    }
+
+    &.ui-autocomplete-multiple {
+        .ui-autocomplete-multiple-container {
+            padding: $inputPadding / 2 $inputPadding;
+
+            &:not(.ui-state-disabled):hover {
+                border-color: $inputHoverBorderColor;
+            }
+
+            &:not(.ui-state-disabled).ui-state-focus {
+                @include focused-input();
+            }
+
+            .ui-autocomplete-input-token {
+                margin: 0;
+                padding: $inputPadding / 2 0;
+                color: $textColor;
+
+                input {
+                    font-family: $fontFamily;
+                    font-size: $fontSize;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+
+            .ui-autocomplete-token {
+                font-size: $fontSize;
+                padding: $inputPadding / 2 $inputPadding;
+                margin: $chipsItemMargin;
+                background: $highlightBgColor;
+                color: $highlightColorText;
+            }
+        }
+    }
+}
+
+.ui-autocomplete-panel {
+    padding: 0;
+    border: $inputOverlayBorder;
+    background-color: $inputListBgColor;
+    @include shadow($inputOverlayShadow);
+
+    .ui-autocomplete-items {
+        padding: $inputListPadding;
+
+        .ui-autocomplete-list-item {
+            margin: $inputListItemMargin;
+            padding: $inputListItemPadding;
+            border: $inputListItemBorder;
+            color: $inputListItemTextColor;
+            background-color: $inputListItemBgColor;
+            @include border-radius(0);
+
+            &.ui-state-highlight {
+                color: $inputListItemHighlightTextColor;
+                background-color: $inputListItemHighlightBgColor;
+            }
+        }
+
+        .ui-autocomplete-group {
+            padding: $inputListItemPadding;
+            background-color: $inputListItemDividerColor;
+            color: $textColor;
+        }
+    }
+}
+
+.ui-fluid {
+    .ui-autocomplete {
+        .ui-autocomplete-dropdown.ui-button {
+            width: $buttonIconOnlyWidth;
+        }
+
+        &.ui-autocomplete-multiple.ui-autocomplete-dd {
+            .ui-autocomplete-multiple-container {
+                border-right: 0 none;
+                width: calc(100% - #{$buttonIconOnlyWidth});
+            }
+        }
+
+        &.ui-autocomplete-dd {
+            .ui-inputtext {
+                border-right: 0 none;
+                width: calc(100% - #{$buttonIconOnlyWidth});
+            }
+        }
+    }
+}
+
+p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext {
+     border: $inputErrorBorder;
+ }

@@ -1,0 +1,29 @@
+.ui-inplace {
+    min-height: 2.357em;
+
+    .ui-inplace-display {
+        padding: $inplacePadding;
+        @include border-radius($borderRadius);
+        @include transition($inplaceTransition);
+
+        &:not(.ui-state-disabled):hover {
+            background-color: $inplaceHoverBgColor;
+            color: $inplaceHoverTextColor;
+        }
+
+        &:focus {
+            @include focused();
+        }
+    }
+}
+
+.ui-fluid {
+    .ui-inplace {
+        &.ui-inplace-closable {
+            .ui-inplace-content > :first-child {
+                display: inline-block;
+                width: calc(100% - #{$buttonIconOnlyWidth});
+            }
+        }
+    }
+}

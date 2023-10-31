@@ -1,0 +1,80 @@
+.ui-dialog {
+    padding: 0;
+    @include shadow($overlayContainerShadow);
+
+    .ui-dialog-titlebar {
+        border: $panelHeaderBorder;
+        background-color: $panelHeaderBgColor;
+        color: $panelHeaderTextColor;
+        padding: $dialogHeaderPadding;
+        font-weight: $panelHeaderFontWeight;
+        border-bottom: 0 none;
+
+        .ui-dialog-title {
+            margin: 0;
+            float: none;
+        }
+
+        .ui-dialog-titlebar-icon {
+            color: $panelHeaderIconColor;
+            border: 0 none;
+            padding: 0;
+            margin-left: $inlineSpacing;
+            @include transition($panelHeaderIconTransition);
+
+            span {
+                width: auto;
+            }
+
+            &:hover {
+                color: $panelHeaderIconHoverColor;
+            }
+
+            &:focus {
+                @include focused();
+            }
+        }
+    }
+
+    .ui-dialog-content {
+        background-color: $panelContentBgColor;
+        color: $panelContentTextColor;
+        border: $overlayContentBorder;
+        padding: $panelContentPadding;
+    }
+
+    .ui-dialog-footer {
+        border: $panelFooterBorder;
+        background-color: $panelFooterBgColor;
+        color: $panelFooterTextColor;
+        padding: $panelFooterPadding;
+        margin: 0;
+        text-align: right;
+        position: relative;
+        border-top: 0 none;
+
+        button {
+            margin: 0 $inlineSpacing 0 0;
+            width: auto;
+        }
+    }
+
+    &.ui-confirm-dialog {
+        .ui-dialog-content {
+            padding: $confirmDialogPadding;
+
+            > span {
+                float: none;
+                display: inline-block;
+                vertical-align: middle;
+                line-height: $fontSize;
+                margin: 0;
+
+                &.ui-icon {
+                    margin-right: .35em;
+                    font-size: $fontSize + 2;
+                }
+            }
+        }
+    }
+}

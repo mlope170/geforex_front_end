@@ -1,0 +1,69 @@
+.ui-steps {
+    position: relative;
+
+    .ui-steps-item {
+        background-color: transparent;
+        text-align: center;
+
+        .ui-menuitem-link {
+            display: inline-block;
+            text-align: center;
+            background-color: transparent;
+            overflow: hidden;
+            @include border-radius($borderRadius);
+            @include transition(box-shadow $transitionDuration);
+
+            &:focus {
+                @include focused();
+            }
+
+            .ui-steps-number {
+                @include border-radius(50%);
+                display: inline-block;
+                color: $stepsItemNumberColor;
+                background-color: $stepsItemBgColor;
+                border: $stepsItemBorder;
+                position: relative;
+                top: $fontSize + 2;
+                margin-bottom: $fontSize;
+                width: $stepsItemWidth;
+                height: $stepsItemHeight;
+                font-size: $fontSize + 2;
+                line-height: $stepsItemHeight - 4;
+                text-align: center;
+            }
+
+            .ui-steps-title {
+                display: block;
+                margin-top: 6px;
+                color: $stepsItemTextColor;
+            }
+        }
+
+        &.ui-state-highlight {
+            .ui-steps-number {
+                background: $highlightBgColor;
+                color: $highlightColorText;
+            }
+
+            .ui-steps-title {
+                font-weight: 700;
+                color: $textColor;
+            }
+        }
+    }
+
+    &:before {
+        content:' ';
+        border-top: $panelContentBorder;
+        width: 100%;
+        top: 45%;
+        left: 0;
+        display: block;
+        position: absolute;
+        ul {
+          display: flex;
+          justify-content: space-around;
+        }
+    }
+}

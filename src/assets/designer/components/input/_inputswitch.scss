@@ -1,0 +1,64 @@
+.ui-inputswitch {
+    width: $inputSwitchWidth;
+    height: $inputSwitchHeight;
+
+    .ui-inputswitch-slider {
+        @include transition($inputSwitchTransition);
+        border-radius: $inputSwitchBorderRadius;
+        background: $inputSwitchSliderOffBgColor;
+
+        &:before {
+            background-color: $inputSwitchHandleOffBgColor;
+            height: 1.250em;
+            width: 1.250em;
+            left: .25em;
+            bottom: .25em;
+            border-radius: 50%;
+            -webkit-transition: $transitionDuration;
+            transition: $transitionDuration;
+        }
+    }
+
+    &.ui-inputswitch-checked {
+        .ui-inputswitch-slider:before {
+            -webkit-transform: translateX(1.250em);
+            -ms-transform: translateX(1.250em);
+            transform: translateX(1.250em);
+        }
+    }
+
+    &.ui-inputswitch-focus {
+        .ui-inputswitch-slider {
+            background: $inputSwitchSliderOffFocusBgColor;
+            @include focused();
+        }
+    }
+
+    &:not(.ui-state-disabled):hover {
+        .ui-inputswitch-slider {
+            background-color: $inputSwitchSliderOffHoverBgColor;
+        }
+    }
+
+    &.ui-inputswitch-checked {
+        .ui-inputswitch-slider {
+            background-color: $inputSwitchSliderOnBgColor;
+        }
+
+        &:not(.ui-state-disabled):hover {
+            .ui-inputswitch-slider {
+                background-color: $inputSwitchSliderOnHoverBgColor;
+            }
+        }
+
+        &.ui-inputswitch-focus {
+            .ui-inputswitch-slider {
+                background: $inputSwitchSliderOnFocusBgColor;
+            }
+        }
+    }
+}
+
+p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch {
+    border: $inputErrorBorder;
+}

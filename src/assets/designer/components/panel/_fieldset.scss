@@ -1,0 +1,52 @@
+.ui-fieldset {
+    border: $panelContentBorder;
+    background-color: $panelContentBgColor;
+    color: $panelContentTextColor;
+
+    .ui-fieldset-legend {
+        a {
+            padding: $panelHeaderPadding;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            background-color: $panelHeaderBgColor;
+            @include border-radius($borderRadius);
+            @include transition($panelHeaderTransition);
+
+            .ui-fieldset-toggler {
+                float: none;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: .5em;
+                color: $panelHeaderIconColor;
+            }
+
+            .ui-fieldset-legend-text{
+                padding: 0;
+            }
+
+            &:focus {
+                @include focused();
+            }
+        }
+    }
+
+    &.ui-fieldset-toggleable {
+        .ui-fieldset-legend {
+            a {
+                &:hover {
+                    background-color: $panelHeaderHoverBgColor;
+                    border: $panelHeaderHoverBorder;
+                    color: $panelHeaderHoverTextColor;
+
+                    .ui-fieldset-toggler {
+                        color: $panelHeaderHoverIconColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-fieldset-content {
+        padding: 0;
+    }
+}

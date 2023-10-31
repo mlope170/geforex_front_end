@@ -1,0 +1,47 @@
+.ui-carousel {
+    .ui-carousel-content {
+        .ui-carousel-prev,
+        .ui-carousel-next {
+            background-color: $carouselNavButtonsBgColor;
+            border: $carouselNavButtonsBorder;
+            @include border-radius($carouselNavButtonsBorderRadius);
+            margin: $carouselNavButtonsMargin;
+            color: $carouselNavButtonsColor;
+            @include transition($carouselNavButtonsTransition);
+
+            &:not(.ui-state-disabled) {
+                &:hover {
+                    background-color: $carouselNavButtonsHoverBgColor;
+                    color: $carouselNavButtonsHoverColor;
+                    border-color: $carouselNavButtonsHoverBorderColor;
+                }
+            }
+        }
+    }
+
+    .ui-carousel-dots-container {
+        .ui-carousel-dot-item {
+            > .ui-button {
+                border-color: transparent;
+                background-color: transparent;
+            }
+            
+            .ui-carousel-dot-icon {
+                width: $carouselDotIconWidth;
+                height: $carouselDotIconHeight;
+                background-color: $carouselDotIconBgColor;
+                margin: $carouselDotIconMargin;
+
+                &::before {
+                    content: ' ';
+                }
+            }
+
+            &.ui-state-highlight {
+                .ui-carousel-dot-icon {
+                    background-color: $carouselActiveDotIconBgColor;
+                }
+            }
+        }
+    }
+}

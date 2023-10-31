@@ -1,0 +1,42 @@
+<div class="basic-container">
+
+  <mat-card>
+    <mat-card-header class="p-d-flex p-jc-between">
+      <h3>Mantenimiento de tabla "Municipios SIGPAC"</h3>
+    </mat-card-header>
+  </mat-card>
+  <br>
+<p>{{mensaje}}</p>
+
+<div class="demo-button-container">
+  <button mat-raised-button (click)="nuevo()" class="demo-button">
+    Nuevo
+  </button>
+</div>
+<br>
+
+  <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8" >
+    <ng-container matColumnDef="musMunicipiosigpacid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by number"> ID. </mat-header-cell>
+      <mat-cell *matCellDef="let element" > {{element.musMunicipiosigpacid}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="musCodigoprovincia">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header >PROVINCIA </mat-header-cell>
+      <mat-cell *matCellDef="let element" > {{element.musCodigoprovincia}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="musCodigomunicipio">
+      <mat-header-cell *matHeaderCellDef mat-sort-header >CÓDIGO MUNICIPIO SIGPAC </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.musCodigomunicipio}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="musNombremunicipio">
+      <mat-header-cell *matHeaderCellDef mat-sort-header > MUNICIPIO </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.musNombremunicipio}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"    (click)="editar(row)"   (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+   </table>
+   <!-- <router-outlet></router-outlet> -->
+
+  </div>

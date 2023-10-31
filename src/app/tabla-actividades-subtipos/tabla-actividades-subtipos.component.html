@@ -1,0 +1,48 @@
+
+
+<mat-card>
+  <mat-card-header class="p-d-flex p-jc-between">
+    <h3>Mantenimiento de tabla "Subtipos de Actividades"</h3>
+  </mat-card-header>
+</mat-card>
+
+<br>
+<p>{{mensaje}}</p>
+<br>
+
+
+<div class="example-button-row">
+  <button mat-raised-button (click)="nuevo()">
+    Nuevo
+  </button>
+</div>
+<br>
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="astActividadsubtipoid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> ID. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.astActividadsubtipoid}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tipoActividad">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> TIPO ACTIVIDAD. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.tipoActividad}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="for000Actividadestipo" >
+    <mat-header-cell *matHeaderCellDef mat-sort-header> TIPO ACTIVIDAD. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.for000Actividadestipo.atiActividadtipoid}}-{{element.for000Actividadestipo.atiDescripcion}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="astDescripcion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPCION </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.astDescripcion}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editar(row)"
+    (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+</table>
+

@@ -1,0 +1,122 @@
+ @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+ /* @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+ @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+ @import '~@angular/material/prebuilt-themes/purple-green.css'; */
+html,
+body {
+  height: 100vh;
+  font-family: "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos de la barra de desplazamiento vertical */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Color del pulgar de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Color de la pista de la barra de desplazamiento */
+}
+
+.m-auto {
+  margin: auto;
+}
+
+
+
+/* WIDTH */
+.w-25 {
+  width: 25% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-75 {
+  width: 75% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+/*HEIGHT*/
+.h-25 {
+  height: 25% !important;
+}
+
+.h-50 {
+  height: 50% !important;
+}
+
+.h-75 {
+  height: 75% !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.mat-raised-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-step-header .mat-step-icon-state-edit,
+.mat-step-header .mat-step-icon-selected {
+  background-color: #01B053;
+}
+
+.ui-fileupload .ui-fileupload-buttonbar {
+  background-color: rgba(4, 171, 80, 0.5) !important;
+}
+
+.ui-button {
+  background-color: rgba(4, 171, 80) !important;
+  border: 1px solid rgba(4, 171, 80) !important;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #04AC51 !important;
+}
+
+.btn-cancelar,
+.btn-aceptar {
+  padding: 1em 5em !important;
+}
+
+.mat-input-element {
+  caret-color: #01B053 !important;
+
+}
+
+.mat-form-field.mat-focused.mat-form-field-ripple {
+  background-color: #01B053 !important;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* estilos personalizados */
+ .mat-row:hover {
+  background-color: #999 !important;
+}
+
+
+

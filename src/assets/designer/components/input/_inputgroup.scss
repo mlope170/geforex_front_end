@@ -1,0 +1,63 @@
+.ui-inputgroup {
+    .ui-inputgroup-addon {
+        border-color: $inputGroupBorderColor;
+        background-color: $inputGroupBgColor;
+        color: $inputGroupTextColor;
+        padding: $inputPadding;
+        min-width: 2em;
+
+        &:first-child {
+            @include border-radius-left($borderRadius);
+        }
+
+        &:last-child {
+            @include border-radius-right($borderRadius);
+        }
+
+        &.ui-inputgroup-addon-checkbox {
+            position: relative;
+
+            .ui-chkbox {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -1 * $checkboxWidth / 2;
+                margin-top: -1 * $checkboxHeight / 2;
+            }
+        }
+
+        &.ui-inputgroup-addon-radiobutton {
+            position: relative;
+
+            .ui-radiobutton {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -1 * $radiobuttonWidth / 2;
+                margin-top: -1 * $radiobuttonHeight / 2;
+            }
+        }
+    }
+
+    .ui-button {
+        &:first-child {
+          @include border-radius-left($borderRadius);
+        }
+
+        &:last-child {
+          @include border-radius-right($borderRadius);
+        }
+    }
+}
+
+.ui-fluid {
+    .ui-inputgroup {
+        .ui-button {
+            width: auto;
+
+            &.ui-button-icon-only {
+                width: $buttonIconOnlyWidth;
+            }
+        }
+    }
+}

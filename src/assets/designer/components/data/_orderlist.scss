@@ -1,0 +1,76 @@
+.ui-orderlist {
+    .ui-orderlist-controls {
+        padding: $panelContentPadding;
+
+        button {
+            font-size: $fontSize + 2;
+        }
+    }
+
+    .ui-orderlist-caption {
+        background-color: $panelHeaderBgColor;
+        color: $panelHeaderTextColor;
+        border: $panelHeaderBorder;
+        padding: $panelHeaderPadding;
+        font-weight: $panelHeaderFontWeight;
+        border-bottom: 0 none;
+        @include border-radius-top($borderRadius);
+    }
+
+    .ui-orderlist-filter-container {
+        padding: $inputListHeaderPaddingTop $inputListHeaderPaddingRight $inputListHeaderPaddingBottom $inputListHeaderPaddingLeft;
+        border: $panelHeaderBorder;
+        color: $inputListHeaderTextColor;
+        background-color: $inputListHeaderBgColor;
+        margin: $inputListHeaderMargin;
+        border-bottom: 0 none;
+
+        input.ui-inputtext {
+            width: 100%;
+            padding-right: 2em;
+            text-indent: 0;
+        }
+
+        .ui-orderlist-filter-icon {
+            top: 50%;
+            margin-top: -.5em;
+            left: auto;
+            right: $inputListHeaderPaddingRight + .5em;
+            color: $inputListHeaderSearchIconColor;
+        }
+    }
+
+    .ui-orderlist-list {
+        border: $panelContentBorder;
+        background-color: $panelContentBgColor;
+        color: $panelContentTextColor;
+        padding: $inputListPadding;
+
+        .ui-orderlist-item {
+            padding: $inputListItemPadding;
+            margin: $inputListItemMargin;
+            border: $inputListItemBorder;
+            color: $inputListItemTextColor;
+            background-color: $inputListItemBgColor;
+            @include transition($inputListItemTransition);
+
+            &:not(.ui-state-highlight):hover {
+                background-color: $inputListItemHoverBgColor;
+                color: $inputListItemHoverTextColor;
+            }
+
+            &.ui-state-highlight {
+                background-color: $inputListItemHighlightBgColor;
+                color: $inputListItemHighlightTextColor;
+            }
+
+            &:focus {
+                @include focused-listitem();
+            }
+        }
+
+        .ui-orderlist-droppoint-highlight {
+            background-color: $highlightBgColor;
+        }
+    }
+}

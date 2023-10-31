@@ -1,0 +1,46 @@
+.ui-toast {
+    .ui-toast-message {
+        @include shadow($toastShadow);
+        margin: $toastMessageMargin;
+
+        &.ui-toast-message-info {
+            background-color: $infoMessageBgColor;
+            border: $infoMessageBorder;
+            color: $infoMessageTextColor;
+            
+            .ui-toast-close-icon {
+                color: $infoMessageTextColor;
+            }
+        }
+
+        &.ui-toast-message-success {
+            background-color: $successMessageBgColor;
+            border: $successMessageBorder;
+            color: $successMessageTextColor;
+            
+            .ui-toast-close-icon {
+                color: $successMessageIconColor;
+            }
+        }
+
+        &.ui-toast-message-warn {
+            background-color: $warnMessageBgColor;
+            border: $warnMessageBorder;
+            color: $warnMessageTextColor;
+            
+            .ui-toast-close-icon {
+                color: $warnMessageTextColor;
+            }
+        }
+
+        &.ui-toast-message-error {
+            background-color: $errorMessageBgColor;
+            border: $errorMessageBorder;
+            color: $errorMessageTextColor;
+            
+            .ui-toast-close-icon {
+                color: $errorMessageTextColor;
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+.ui-multiselect {
+    background: $inputBgColor;
+    border: $inputBorder;
+    @include transition($inputTransition);
+
+    &:not(.ui-state-disabled):hover {
+        border-color: $inputHoverBorderColor;
+    }
+
+    &:not(.ui-state-disabled).ui-state-focus {
+        @include focused-input();
+    }
+
+    .ui-multiselect-label {
+        padding: $inputPadding;
+        padding-right: 2em;
+        color: $textColor;
+
+        .ui-placeholder {
+            color: $inputPlaceholderTextColor;
+        }
+    }
+
+    .ui-multiselect-trigger {
+        background-color: $inputBgColor;
+        width: 2em;
+        line-height: 2em;
+        text-align: center;
+        padding: 0;
+        color: $inputDropdownIconColor;
+    }
+}
+
+.ui-multiselect-panel {
+    padding: 0;
+    border: $inputOverlayBorder;
+    background-color: $inputListBgColor;
+    @include shadow($inputOverlayShadow);
+
+    .ui-multiselect-header {
+        padding: $inputListHeaderPaddingTop $inputListHeaderPaddingRight $inputListHeaderPaddingBottom $inputListHeaderPaddingLeft;
+        border-bottom: $inputListHeaderBorder;
+        color: $inputListHeaderTextColor;
+        background-color: $inputListHeaderBgColor;
+        margin: $inputListHeaderMargin;
+
+        .ui-multiselect-filter-container {
+            float: none;
+            width: 70%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0;
+
+            .ui-inputtext {
+                padding: $inputPadding;
+                padding-right: 2em;
+            }
+
+            .ui-multiselect-filter-icon {
+                color: $inputListHeaderSearchIconColor;
+                top: 50%;
+                margin-top: -.5em;
+                right: .5em;
+                left: auto;
+            }
+        }
+
+        .ui-chkbox {
+            margin-right: $inlineSpacing;
+            float: none;
+            vertical-align: middle;
+        }
+
+        .ui-multiselect-close {
+            color: $inputListHeaderCloseIconColor;
+            top: 50%;
+            margin-top: -.5em;
+            line-height: 1;
+            @include transition($inputListHeaderCloseIconTransition);
+
+            &:hover {
+                color: $inputListHeaderCloseIconHoverColor;
+            }
+
+            &:focus {
+                @include focused();
+            }
+        }
+    }
+
+    .ui-multiselect-items {
+        padding: $inputListPadding;
+
+        .ui-multiselect-item {
+            margin: $inputListItemMargin;
+            padding: $inputListItemPadding;
+            border: $inputListItemBorder;
+            color: $inputListItemTextColor;
+            background-color: $inputListItemBgColor;
+            @include transition($inputListItemTransition);
+            @include border-radius(0);
+
+            &.ui-state-highlight {
+                color: $inputListItemHighlightTextColor;
+                background-color: $inputListItemHighlightBgColor;
+            }
+
+            &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+                color: $inputListItemHoverTextColor;
+                background-color: $inputListItemHoverBgColor;
+            }
+
+            &.ui-state-disabled {
+                .ui-chkbox-box {
+                    cursor: auto;
+
+                    &:hover {
+                        border: $inputBorder;
+                    }
+
+                    &.ui-state-active:hover {
+                        border-color: $checkboxActiveBorderColor;
+                    }
+                }
+            }
+
+            &:focus {
+                @include focused-listitem();
+            }
+
+            .ui-chkbox {
+                position: static;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 $inlineSpacing 0 0;
+            }
+
+            label {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+p-multiselect.ng-dirty.ng-invalid > .ui-multiselect {
+    border: $inputErrorBorder;
+}

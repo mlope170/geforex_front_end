@@ -1,0 +1,38 @@
+<div class="dialog-wrapper">
+
+<mat-dialog-content>
+<mat-error *ngIf="!nombreValido">Nombre obligatorio</mat-error>
+<mat-error *ngIf="!especieProtegidaValido">Especie protegida obligatorio</mat-error>
+
+<form [formGroup]="editar" class="w-100 p-d-flex p-flex-column p-ai-center ng-untouched ng-pristine ng-valid">
+  <div formGroupName="camposEditar" class="w-100 p-d-flex p-jc-between p-flex-wrap">
+
+    <!-- <mat-form-field [hidden]="true" class="example-full-width" > -->
+
+      <input matInput type="number"  formControlName="id" [(ngModel)]="data.id" [hidden]="true">
+    <!-- </mat-form-field> -->
+
+    <mat-form-field>
+
+      <mat-label>Nombre común</mat-label>
+      <input matInput type="text" formControlName="nombreComun"  [(ngModel)]="data.nombreComun">
+
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+      <mat-label>Especie protegida</mat-label>
+      <textarea matInput type="text" formControlName="especieProtegida" [(ngModel)]="data.especieProtegida"> </textarea>
+    </mat-form-field>
+
+  </div>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+ <!-- <button mat-button (click)="actualizarEspecie(data.id)" [mat-dialog-close]="data" cdkFocusInitial>Guardar</button> -->
+ <button mat-button (click)="actualizarEspecie(data.id)"  cdkFocusInitial>Guardar</button>
+ <button mat-button [disabled]="noDelete" (click)="eliminarEspecie(data.id, data.nombreComun)"  cdkFocusInitial>Eliminar</button>
+</mat-dialog-actions>
+</div>

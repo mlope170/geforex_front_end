@@ -1,0 +1,55 @@
+.ui-panel {
+  padding: 0;
+  border: 0 none;
+
+  .ui-panel-titlebar {
+    border: $panelHeaderBorder;
+    padding: $panelHeaderPadding;
+    background-color: $panelHeaderBgColor;
+    color: $panelHeaderTextColor;
+    font-weight: $panelHeaderFontWeight;
+    @include border-radius-top($borderRadius);
+    @include border-radius-bottom(0);
+
+    .ui-panel-title {
+      vertical-align: middle;
+      font-weight: $panelHeaderFontWeight;
+    }
+
+    .ui-panel-titlebar-icon {
+      margin: 0;
+      position: relative;
+      font-size: $fontSize;
+      color: $panelHeaderIconColor;
+      border: 1px solid transparent;
+      line-height: 1;
+      @include transition($panelHeaderIconTransition);
+
+      &:hover {
+        color: $panelHeaderIconHoverColor;
+      }
+
+      &:focus {
+        @include focused();
+      }
+    }
+  }
+
+  .ui-panel-content {
+    padding: $panelContentPadding;
+    border: $panelContentBorder;
+    background-color: $panelContentBgColor;
+    color: $panelContentTextColor;
+    padding: $panelContentPadding;
+    border-top: 0 none;
+  }
+
+  .ui-panel-footer {
+    padding: $panelFooterPadding;
+    border: $panelFooterBorder;
+    background-color: $panelFooterBgColor;
+    color: $panelFooterTextColor;
+    border-top: 0 none;
+    margin: 0;
+  }
+}

@@ -1,0 +1,64 @@
+<p>{{mensaje}}</p>
+<!-- <mat-card>
+<h2>Mantenimiento de tabla "Servicos Territoriales"</h2>
+</mat-card> -->
+
+
+<mat-card>
+  <mat-card-header class="p-d-flex p-jc-between">
+    <h3>Mantenimiento de tabla "Tipos de Expedientes"</h3>
+  </mat-card-header>
+</mat-card>
+
+<br>
+
+
+<div class="example-button-row">
+  <button mat-raised-button (click)="nuevo()">
+    Nuevo
+  </button>
+</div>
+<br>
+
+<!-- <button class="btn-aceptar" mat-raised-button color="primary" matTooltip="Añadir Recinto"
+          matTooltipPosition="above" >
+
+          Añadir Recinto
+        </button> -->
+
+
+
+  <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8" >
+    <ng-container matColumnDef="extExpedientetipoid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header > ID. </mat-header-cell>
+      <mat-cell *matCellDef="let element" > {{element.extExpedientetipoid}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="extLetra">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header >LETRA </mat-header-cell>
+      <mat-cell *matCellDef="let element" > {{element.extLetra}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="extDescripcion">
+      <mat-header-cell *matHeaderCellDef mat-sort-header >DESCRIPCION </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.extDescripcion}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="extNumeracionconjunta">
+      <mat-header-cell *matHeaderCellDef mat-sort-header > NUMERACIÓN CONJUNTA </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.extNumeracionconjunta}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="extPlazoresolucion">
+      <mat-header-cell *matHeaderCellDef mat-sort-header > PLAZO RESOLUCIÓN </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.extPlazoresolucion}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="extSilencioadministrativo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header > SILENCIO ADMINISTRATIVO </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.extSilencioadministrativo}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"    (click)="editar(row)"   (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+   </table>
+   <!-- <router-outlet></router-outlet> -->
+
+
+

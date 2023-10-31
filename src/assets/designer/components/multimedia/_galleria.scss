@@ -1,0 +1,20 @@
+.ui-galleria {
+    .ui-galleria-nav-prev,
+    .ui-galleria-nav-next {
+        @include transition(all $transitionDuration);
+        position: absolute;
+        color: $textSecondaryColor;
+        
+        &:hover {
+            @include scale(1.2);
+        }
+    }
+
+    .ui-galleria-nav-prev {
+        font-size: $fontSize + 2;
+    }
+
+    .ui-galleria-nav-next {
+        font-size: $fontSize + 2;
+    }
+}

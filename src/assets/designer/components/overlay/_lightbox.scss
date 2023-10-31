@@ -1,0 +1,56 @@
+.ui-lightbox {
+    @include shadow($overlayContainerShadow);
+
+    .ui-lightbox-caption {
+        border: $panelHeaderBorder;
+        background-color: $panelHeaderBgColor;
+        color: $panelHeaderTextColor;
+        padding: $panelHeaderPadding;
+        font-weight: $panelHeaderFontWeight;
+
+        .ui-lightbox-caption-text {
+            color: $panelHeaderTextColor;
+            margin: 0;
+        }
+
+        .ui-lightbox-close {
+            padding: 0;
+            color: $panelHeaderIconColor;
+            overflow: hidden;
+            line-height: 1;
+            @include transition($panelHeaderIconTransition);
+
+            &:hover {
+                color: $panelHeaderIconHoverColor;
+            }
+
+            &:focus {
+                @include focused();
+            }
+        }
+    }
+
+    .ui-lightbox-content-wrapper {
+        overflow: hidden;
+        background-color: $panelContentBgColor;
+        color: $panelContentTextColor;
+        border: 0 none;
+        padding: 0;
+        @include border-radius(0);
+
+        .ui-lightbox-nav-left, .ui-lightbox-nav-right {
+            @include transition(all $transitionDuration);
+            font-size: $lightBoxNavIconFontSize;
+            color: $lightBoxNavIconColor;
+            margin-top: -.5em;
+
+            &:hover {
+                @include scale(1.2);
+            }
+        }
+
+        .ui-lightbox-content.ui-lightbox-loading ~ a {
+            display: none;
+        }
+    }
+}

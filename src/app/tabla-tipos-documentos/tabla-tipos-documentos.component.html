@@ -1,0 +1,38 @@
+
+
+<mat-card>
+  <mat-card-header class="p-d-flex p-jc-between">
+    <h3>Mantenimiento de tabla "Tipos de Documentos"</h3>
+  </mat-card-header>
+</mat-card>
+
+<br>
+<p>{{mensaje}}</p>
+<br>
+
+
+<div class="example-button-row">
+  <button mat-raised-button (click)="nuevo()">
+    Nuevo
+  </button>
+</div>
+<br>
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="dotTipodocumentoid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> ID. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.dotTipodocumentoid}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="dotDescripcion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPCION </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.dotDescripcion}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editar(row)"
+    (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+</table>
+

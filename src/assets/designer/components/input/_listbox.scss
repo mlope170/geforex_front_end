@@ -1,0 +1,99 @@
+.ui-listbox {
+    padding: 0;
+    min-width: $inputListMinWidth;
+    background: $inputListBgColor;
+    border: $inputListBorder;
+
+    .ui-chkbox {
+        margin: 0 $inlineSpacing 0 0;
+    }
+
+    .ui-listbox-header {
+        padding: $inputListHeaderPaddingTop $inputListHeaderPaddingRight $inputListHeaderPaddingBottom $inputListHeaderPaddingLeft;
+        border-bottom: $inputListHeaderBorder;
+        color: $inputListHeaderTextColor;
+        background-color: $inputListHeaderBgColor;
+        margin: $inputListHeaderMargin;
+
+        .ui-listbox-filter-container {
+            width: calc(100% - (#{$inputListHeaderPaddingLeft} + #{$inputListHeaderPaddingLeft} + #{$inlineSpacing}));
+
+            input {
+                padding: $inputPadding;
+                padding-right: 2em;
+            }
+
+            .ui-listbox-filter-icon {
+                top: 50%;
+                left: auto;
+                margin-top: -.5em;
+                right: .5em;
+                color: $inputListHeaderSearchIconColor;
+            }
+        }
+    }
+
+    .ui-listbox-list {
+        background-color: $inputListBgColor;
+
+        .ui-listbox-item {
+            margin: $inputListItemMargin;
+            padding: $inputListItemPadding;
+            border: $inputListItemBorder;
+            color: $inputListItemTextColor;
+            background-color: $inputListItemBgColor;
+            @include transition($inputListItemTransition);
+            @include border-radius(0);
+
+            &.ui-state-highlight {
+                color: $inputListItemHighlightTextColor;
+                background-color: $inputListItemHighlightBgColor;
+            }
+
+            &:focus {
+                @include focused-listitem();
+            }
+
+            .ui-chkbox {
+                position: static;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 $inlineSpacing 0 0;
+            }
+
+            label {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+
+
+    &:not(.ui-state-disabled) {
+        .ui-listbox-item {
+            &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+                color: $inputListItemHoverTextColor;
+                background-color: $inputListItemHoverBgColor;
+            }
+        }
+    }
+
+    &.ui-state-disabled {
+        .ui-chkbox-box {
+            &:not(.ui-state-disabled):not(.ui-state-active):hover {
+                border: $inputBorder;
+            }
+        }
+    }
+
+    .ui-listbox-footer {
+        padding: $inputListHeaderPaddingTop $inputListHeaderPaddingRight $inputListHeaderPaddingBottom $inputListHeaderPaddingLeft;
+        border-top: $inputListHeaderBorder;
+        color: $inputListHeaderTextColor;
+        background-color: $inputListHeaderBgColor;
+    }
+}
+
+p-listbox.ng-dirty.ng-invalid .ui-inputtext {
+    border: $inputErrorBorder;
+}

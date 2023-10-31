@@ -1,0 +1,32 @@
+.ui-tooltip {
+    .ui-tooltip-text {
+        background-color: $tooltipBgColor;
+        color: $tooltipTextColor;
+        padding: $tooltipPadding;
+        @include shadow($overlayContainerShadow);
+    }
+
+    &.ui-tooltip-right {
+        .ui-tooltip-arrow {
+            border-right-color: $tooltipBgColor;
+        }
+    }
+
+    &.ui-tooltip-left {
+        .ui-tooltip-arrow {
+            border-left-color: $tooltipBgColor;
+        }
+    }
+
+    &.ui-tooltip-top {
+        .ui-tooltip-arrow {
+            border-top-color: $tooltipBgColor;
+        }
+    }
+
+    &.ui-tooltip-bottom {
+        .ui-tooltip-arrow {
+            border-bottom-color: $tooltipBgColor;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.ui-radiobutton {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    width: $radiobuttonWidth;
+    height: $radiobuttonHeight;
+
+    .ui-radiobutton-box {
+        border: $inputBorder;
+        background-color: $inputBgColor;
+        width: $radiobuttonWidth;
+        height: $radiobuttonHeight;
+        text-align: center;
+        position: relative;
+        @include transition($radiobuttonTransition);
+        @include border-radius(50%);
+
+        &:not(.ui-state-disabled):not(.ui-state-active):hover {
+            border-color: $inputHoverBorderColor;
+        }
+
+        &.ui-state-focus {
+            @include focused-input();
+        }
+
+        &.ui-state-active {
+            border-color: $radiobuttonActiveBorderColor;
+            background-color: $radiobuttonActiveBgColor;
+            color: $radiobuttonActiveTextColor;
+
+            .ui-radiobutton-icon {
+                background-color: $radiobuttonActiveTextColor;
+            }
+
+            &:not(.ui-state-disabled):hover {
+                border-color: $radiobuttonActiveHoverBorderColor;
+                background-color: $radiobuttonActiveHoverBgColor;
+                color: $radiobuttonActiveHoverTextColor;
+            }
+        }
+
+        .ui-radiobutton-icon {
+            background: transparent;
+            width: $radiobuttonWidth / 2;
+            height: $radiobuttonHeight / 2;
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -1 * $radiobuttonWidth / 4;
+            margin-top: -1 * $radiobuttonWidth / 4;
+            @include transition(background-color $transitionDuration);
+            @include border-radius(50%);
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.ui-radiobutton-label {
+    margin: 0 0 0 .5em;
+}
+
+p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box {
+    border: $inputErrorBorder;
+}

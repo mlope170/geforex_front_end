@@ -1,0 +1,50 @@
+/* Add your customizations of theme here */
+body {
+  .p-grid.dum-landing {
+    margin: 0;
+  }
+  .dum-header {
+    margin: 0.5em !important;
+  }
+  .dum-footer {
+    background-color: $menuBgColor;
+    color: $primaryTextColor;
+    padding-top: 2em;
+    padding-bottom: 0.7em;
+    a {
+      color: $primaryTextColor;
+      &:hover {
+        color: $textSecondaryColor;
+      }
+    }
+    .fas {
+      height: 28px;
+      width: 28px;
+      margin: 0 0.1em;
+      color: $primaryTextColor;
+      &.fa-youtube-play {
+        &:before {
+          //   content: "\f167";
+          height: auto;
+        }
+      }
+      &:hover {
+        color: $textSecondaryColor;
+      }
+    }
+  }
+
+  .dum-tramites {
+    .ui-orderlist-controls {
+      display: none;
+      visibility: hidden;
+    }
+    .ui-orderlist-list-container {
+      width: 100%;
+    }
+  }
+  .dum-fa {
+    color: $menuBgColor;
+    fill: $menuBgColor;
+  }
+}

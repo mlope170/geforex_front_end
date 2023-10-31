@@ -1,0 +1,52 @@
+.ui-message {
+    padding: $messagePadding;
+    margin: $messageMargin;
+    
+    &.ui-message-info {
+        background-color: $infoMessageBgColor;
+        border: $infoMessageBorder;
+        color: $infoMessageTextColor;
+        
+        .ui-message-icon {
+            color: $infoMessageIconColor;
+        }
+    }
+
+    &.ui-message-success {
+        background-color: $successMessageBgColor;
+        border: $successMessageBorder;
+        color: $successMessageTextColor;
+        
+        .ui-message-icon {
+            color: $successMessageIconColor;
+        }
+    }
+
+    &.ui-message-warn {
+        background-color: $warnMessageBgColor;
+        border: $warnMessageBorder;
+        color: $warnMessageTextColor;
+        
+        .ui-message-icon {
+            color: $warnMessageIconColor;
+        }
+    }
+
+    &.ui-message-error {
+        background-color: $errorMessageBgColor;
+        border: $errorMessageBorder;
+        color: $errorMessageTextColor;
+        
+        .ui-message-icon {
+            color: $errorMessageIconColor;
+        }
+    }
+
+    .ui-message-icon {
+        font-size: $messageIconFontSize;
+    }
+
+    .ui-message-text {
+        font-size: $messageTextFontSize;
+    }
+}

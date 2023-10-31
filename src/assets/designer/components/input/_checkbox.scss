@@ -1,0 +1,51 @@
+.ui-chkbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    width: $checkboxWidth;
+    height: $checkboxHeight;
+
+    .ui-chkbox-box {
+        border: $inputBorder;
+        background-color: $inputBgColor;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        text-align: center;
+        @include border-radius($borderRadius);
+        @include transition($checkboxTransition);
+
+        &:not(.ui-state-disabled):hover {
+            border-color: $inputHoverBorderColor;
+        }
+
+        &.ui-state-focus {
+            @include focused-input();
+        }
+
+        &.ui-state-active {
+            border-color: $checkboxActiveBorderColor;
+            background-color: $checkboxActiveBgColor;
+            color: $checkboxActiveTextColor;
+
+            &:not(.ui-state-disabled):hover {
+                border-color: $checkboxActiveHoverBorderColor;
+                background-color: $checkboxActiveHoverBgColor;
+                color: $checkboxActiveHoverTextColor;
+            }
+        }
+
+        .ui-chkbox-icon {
+            overflow: hidden;
+            position: relative;
+            font-size: $fontSize + 4;
+        }
+    }
+}
+
+.ui-chkbox-label {
+    margin: 0 0 0 $inlineSpacing;
+}
+
+p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box {
+    border: $inputErrorBorder;
+}

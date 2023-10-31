@@ -1,0 +1,37 @@
+.ui-rating {
+    a {
+        text-align: center;
+        display: inline-block;
+        color: $ratingStarIconColor;
+        @include border-radius($borderRadius);
+        line-height: 1;
+        @include transition($ratingTransition);
+
+        &.ui-rating-cancel {
+            color: $ratingCancelIconColor;
+        }
+
+        .ui-rating-icon {
+            font-size: $ratingIconFontSize;
+        }
+    }
+
+    &:not(.ui-state-disabled):not(.ui-rating-readonly) {
+        a {
+            &:hover {
+                color: $ratingStarIconHoverColor;
+            }
+
+            &.ui-rating-cancel {
+                &:hover {
+                    color: $ratingCancelHoverIconColor;
+                }
+            }
+
+
+            &:focus {
+                @include focused();
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+mat-row:hover mat-cell {
+  background-color: #fff5a2 !important;
+}
+
+mat-header-cell {
+  color: rgba(0,0,0,.54);
+}

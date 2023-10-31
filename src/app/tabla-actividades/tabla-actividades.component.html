@@ -1,0 +1,52 @@
+
+
+<mat-card>
+  <mat-card-header class="p-d-flex p-jc-between">
+    <h3>Mantenimiento de tabla "Actividades"</h3>
+  </mat-card-header>
+</mat-card>
+
+<br>
+<p>{{mensaje}}</p>
+<br>
+
+
+<div class="example-button-row">
+  <button mat-raised-button (click)="nuevo()">
+    Nuevo
+  </button>
+</div>
+<br>
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="actActividadtipoid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> ID. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.actActividadtipoid}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="subtipoActividad">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> TIPO ACTIVIDAD. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.subtipoActividad}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="for000Actividadessubtipo" >
+    <mat-header-cell *matHeaderCellDef mat-sort-header> TIPO ACTIVIDAD. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.for000Actividadessubtipos.astActividadsubtipoid}}-{{element.for000Actividadessubtipos.astDescripcion}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actCodigo">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>CÓDIGO </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.actCodigo}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actDescripcion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPCION </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.actDescripcion}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editar(row)"
+    (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+</table>
+

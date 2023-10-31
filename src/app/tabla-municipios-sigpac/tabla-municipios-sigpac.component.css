@@ -1,0 +1,13 @@
+/* Row hover bakground */
+mat-row:hover mat-cell {
+  background-color: #fff5a2 !important;
+}
+
+mat-header-cell {
+  color: rgba(0,0,0,.54);
+}
+
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}

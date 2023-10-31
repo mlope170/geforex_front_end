@@ -1,0 +1,54 @@
+.ui-organizationchart {
+    .ui-organizationchart-node-content {
+        &.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
+            background-color: $inputListItemHoverBgColor;
+            color: $inputListItemHoverTextColor;
+        }
+
+        &.ui-state-highlight {
+            background-color: $highlightBgColor;
+            color: $highlightColorText;
+
+            .ui-node-toggler {
+                i {
+                    color: darken($highlightBgColor, 25%);
+                }
+            }
+        }
+    }
+
+    .ui-organizationchart-line-down {
+        background-color: $organizationChartConnectorColor;
+    }
+
+    .ui-organizationchart-line-left {
+        border-right: $panelContentBorder;
+        border-color: $organizationChartConnectorColor;
+    }
+
+    .ui-organizationchart-line-top {
+        border-top: $panelContentBorder;
+        border-color: $organizationChartConnectorColor;
+    }
+
+    .ui-organizationchart-node-content {
+        border: $panelContentBorder;
+        background-color: $panelContentBgColor;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+    }
+
+    .ui-organizationchart-node-content .ui-node-toggler {
+        bottom: -.7em;
+        margin-left: -.46em;
+        color: $dataIconColor;
+        overflow: hidden;
+        line-height: 1;
+        @include border-radius($borderRadius);
+        @include transition(box-shadow $transitionDuration);
+
+        &:focus {
+            @include focused();
+        }
+    }
+}

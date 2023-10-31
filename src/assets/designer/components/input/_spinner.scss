@@ -1,0 +1,46 @@
+.ui-spinner {
+    .ui-spinner-input {
+        padding-right: $spinnerButtonWidth + $inputPadding;
+    }
+
+    .ui-spinner-button {
+        width: $spinnerButtonWidth;
+
+        &.ui-spinner-up {
+            @include border-radius-top-right($borderRadius);
+        }
+
+        &.ui-spinner-down {
+            @include border-radius-bottom-right($borderRadius);
+        }
+
+        .ui-spinner-button-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -.5em;
+            margin-left: -.5em;
+            width: 1em;
+        }
+    }
+}
+
+.ui-fluid {
+    .ui-spinner {
+        .ui-spinner-input {
+            padding-right: $spinnerButtonWidth + $inputPadding;
+        }
+
+        .ui-spinner-button {
+            width: $spinnerButtonWidth;
+
+            .ui-spinner-button-icon {
+                left: 50%;
+            }
+        }
+    }
+}
+
+p-spinner.ng-dirty.ng-invalid > .ui-inputtext {
+    border: $inputErrorBorder;
+}

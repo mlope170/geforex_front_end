@@ -1,0 +1,20 @@
+mat-form-field {
+  width: 48%;
+}
+
+mat-card-title {
+  background: lightslategray;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+ fieldset {
+  padding: 20px;
+  border: solid 1px black;
+}
+
+ legend{
+  width:auto !important;
+}
+

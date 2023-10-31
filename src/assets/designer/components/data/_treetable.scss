@@ -1,0 +1,151 @@
+.ui-treetable {
+    .ui-treetable-caption,
+    .ui-treetable-summary {
+        background-color: $panelHeaderBgColor;
+        color: $panelHeaderTextColor;
+        border: $panelHeaderBorder;
+        padding: $panelHeaderPadding;
+        text-align: center;
+    }
+
+    .ui-treetable-caption {
+        border-bottom: 0 none;
+        font-weight: $tableCaptionFontWeight;
+    }
+
+    .ui-treetable-summary {
+        border-top: 0 none;
+        font-weight: $tableSummaryFontWeight;
+    }
+
+    .ui-treetable-thead > tr > th {
+        padding: $tableHeaderCellPadding;
+        border: $tableHeaderCellBorder;
+        font-weight: $tableHeaderCellFontWeight;
+        color: $tableHeaderCellTextColor;
+        background-color: $tableHeaderCellBgColor;
+    }
+
+    .ui-treetable-tbody > tr > td {
+        padding: $tableBodyCellPadding;
+    }
+
+    .ui-treetable-tfoot > tr > td {
+        padding: $tableFooterCellPadding;
+        border: $tableFooterCellBorder;
+        font-weight: $tableFooterCellFontWeight;
+        color: $tableFooterCellTextColor;
+        background-color: $tableFooterCellBgColor;
+    }
+
+    .ui-sortable-column {
+        @include transition(box-shadow $transitionDuration);
+        
+        &:focus {
+            @include focused-listitem();
+        }
+
+        .ui-sortable-column-icon {
+            color: $tableHeaderCellIconColor;
+        }
+
+        &:not(.ui-state-highlight):hover {
+            background-color: $tableHeaderCellHoverBgColor;
+            color: $tableHeaderCellHoverTextColor;
+
+            .ui-sortable-column-icon {
+                color: $tableHeaderCellHoverIconColor;
+            }
+        }
+
+        &.ui-state-highlight {
+            background-color: $highlightBgColor;
+            color: $highlightColorText;
+
+            .ui-sortable-column-icon {
+                color: $highlightColorText;
+            }
+        }
+    }
+
+    .ui-editable-column {
+        input {
+            font-size: $fontSize;
+            font-family: $fontFamily;
+
+            &:focus {
+                outline: 1px solid $inputFocusBorderColor;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    .ui-treetable-tbody {
+        > tr {
+            background-color: $tableBodyRowBgColor;
+            color: $tableBodyRowTextColor;
+
+            > td {
+                background-color: inherit;
+                border: $tableBodyCellBorder;
+                @include transition(box-shadow $transitionDuration);
+
+                .ui-treetable-toggler {
+                    color: $dataIconColor;
+                    vertical-align: middle;
+                }
+
+                .ui-treetable-chkbox {
+                    vertical-align: middle;
+                    margin-right: $inlineSpacing;
+                }
+            }
+
+            &.ui-state-highlight {
+                background-color: $highlightBgColor;
+                color: $highlightColorText;
+
+                > td {
+                    background-color: inherit;
+                    border: $tableBodyCellBorder;
+
+                    .ui-treetable-toggler {
+                        color: $highlightColorText;
+                    }
+                }
+            }
+
+            &:focus {
+                outline: none;
+
+                + tr > td {
+                    box-shadow: 0 -.2em 0 0 $focusOutlineColor;
+                }
+
+                > td {
+                    box-shadow: 0 -.2em 0 0 $focusOutlineColor, 0 .2em 0 0 $focusOutlineColor;
+                }
+
+                > td:first-child {
+                    box-shadow: 0 -0.2em 0 0 $focusOutlineColor, 0 0.2em 0 0 $focusOutlineColor, -0.1em -0.1em 0 0.1em $focusOutlineColor;
+                }
+
+                > td:last-child {
+                    box-shadow: 0 -0.2em 0 0 $focusOutlineColor, 0 0.2em 0 0 $focusOutlineColor, 0.1em -0.1em 0 0.1em $focusOutlineColor;
+                }
+            }
+        }
+    }
+
+    &.ui-treetable-hoverable-rows {
+        .ui-treetable-tbody > tr:not(.ui-state-highlight):hover {
+            cursor: pointer;
+            background-color: $tableBodyRowHoverBgColor;
+            color: $tableBodyRowHoverTextColor;
+        }
+    }
+
+    .ui-column-resizer-helper {
+        background-color: $tableResizerHelperBgColor;
+    }
+}

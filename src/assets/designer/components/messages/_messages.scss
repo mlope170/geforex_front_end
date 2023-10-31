@@ -1,0 +1,78 @@
+.ui-messages {
+    padding: $messagesPadding;
+    margin: $messagesMargin;
+    
+    &.ui-messages-info {
+        background-color: $infoMessageBgColor;
+        border: $infoMessageBorder;
+        color: $infoMessageTextColor;
+        
+        .ui-messages-icon {
+            color: $infoMessageIconColor;
+        }
+        
+        .ui-messages-close {
+            color:  $infoMessageIconColor;
+        }
+    }
+
+    &.ui-messages-success {
+        background-color: $successMessageBgColor;
+        border: $successMessageBorder;
+        color: $successMessageTextColor;
+        
+        .ui-messages-icon {
+            color: $successMessageIconColor;
+        }
+        
+        .ui-messages-close {
+            color:  $successMessageIconColor;
+        }
+    }
+
+    &.ui-messages-warn {
+        background-color: $warnMessageBgColor;
+        border: $warnMessageBorder;
+        color: $warnMessageTextColor;
+        
+        .ui-messages-icon {
+            color: $warnMessageIconColor;
+        }
+        
+        .ui-messages-close {
+            color:  $warnMessageIconColor;
+        }
+    }
+
+    &.ui-messages-error {
+        background-color: $errorMessageBgColor;
+        border: $errorMessageBorder;
+        color: $errorMessageTextColor;
+        
+        .ui-messages-icon {
+            color: $errorMessageIconColor;
+        }
+        
+        .ui-messages-close {
+            color:  $errorMessageIconColor;
+        }
+    }
+    
+    .ui-messages-close {
+        top: .25em;
+        right: .5em;
+        font-size: $messageCloseIconFontSize;
+        overflow: hidden;
+        line-height: 1;
+        @include border-radius($borderRadius);
+        @include transition(box-shadow $transitionDuration);
+
+        &:focus {
+            @include focused();
+        }
+    }
+
+    .ui-messages-icon {
+        font-size: $messagesIconFontSize;
+    }
+}

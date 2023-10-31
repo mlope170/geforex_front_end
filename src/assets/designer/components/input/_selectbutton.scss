@@ -1,0 +1,60 @@
+.ui-selectbutton {
+    .ui-button {
+        background-color: $toggleButtonBgColor;
+        border: $toggleButtonBorder;
+        color: $toggleButtonTextColor;
+        overflow: hidden;
+        @include transition($buttonTransition);
+
+        .ui-button-icon-left {
+            color: $toggleButtonIconColor;
+        }
+
+        &:not(.ui-state-disabled):not(.ui-state-active):hover {
+            background-color: $toggleButtonHoverBgColor;
+            border-color: $toggleButtonHoverBorderColor;
+            color: $toggleButtonHoverTextColor;
+
+            .ui-button-icon-left {
+                color: $toggleButtonHoverIconColor;
+            }
+        }
+
+        &:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus {
+            @include shadow($buttonFocusShadow);
+            z-index: 1;
+        }
+
+        &.ui-state-active {
+            background-color: $toggleButtonActiveBgColor;
+            border-color: $toggleButtonActiveBorderColor;
+            color: $toggleButtonActiveTextColor;
+
+            .ui-button-icon-left {
+                color: $toggleButtonActiveIconColor;
+            }
+
+            &:not(.ui-state-disabled):hover {
+                background-color: $toggleButtonActiveHoverBgColor;
+                border-color: $toggleButtonActiveHoverBorderColor;
+                color: $toggleButtonActiveHoverTextColor;
+
+                .ui-button-icon-left {
+                    color: $toggleButtonActiveHoverIconColor;
+                }
+            }
+        }
+
+        &:first-child {
+            @include border-radius-left($borderRadius);
+        }
+
+        &:last-child {
+            @include border-radius-right($borderRadius);
+        }
+    }
+}
+
+p-selectbutton.ng-dirty.ng-invalid .ui-button {
+    border: $inputErrorBorder;
+}

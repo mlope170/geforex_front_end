@@ -1,0 +1,48 @@
+.ui-togglebutton {
+    background-color: $toggleButtonBgColor;
+    border: $toggleButtonBorder;
+    color: $toggleButtonTextColor;
+    @include transition($buttonTransition);
+
+    .ui-button-icon-left {
+        color: $toggleButtonIconColor;
+    }
+
+    &:not(.ui-state-disabled):not(.ui-state-active):hover {
+        background-color: $toggleButtonHoverBgColor;
+        border-color: $toggleButtonHoverBorderColor;
+        color: $toggleButtonHoverTextColor;
+
+        .ui-button-icon-left {
+            color: $toggleButtonHoverIconColor;
+        }
+    }
+
+    &:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus {
+        @include shadow($buttonFocusShadow);
+    }
+
+    &.ui-state-active {
+        background-color: $toggleButtonActiveBgColor;
+        border-color: $toggleButtonActiveBorderColor;
+        color: $toggleButtonActiveTextColor;
+
+        .ui-button-icon-left {
+            color: $toggleButtonActiveIconColor;
+        }
+
+        &:hover {
+            background-color: $toggleButtonActiveHoverBgColor;
+            border-color: $toggleButtonActiveHoverBorderColor;
+            color: $toggleButtonActiveHoverTextColor;
+
+            .ui-button-icon-left {
+                color: $toggleButtonActiveHoverIconColor;
+            }
+        }
+    }
+}
+
+p-togglebutton.ng-dirty.ng-invalid .ui-button {
+    border: $inputErrorBorder;
+}

@@ -1,0 +1,44 @@
+.ui-fileupload {
+    .ui-fileupload-buttonbar {
+        background-color: $panelHeaderBgColor;
+        padding: $panelHeaderPadding;
+        border: $panelHeaderBorder;
+        color: $panelHeaderTextColor;
+        border-bottom: 0 none;
+
+        .ui-button {
+            margin-right: 8px;
+        }
+    }
+
+    .ui-fileupload-content {
+        background-color: $panelContentBgColor;
+        padding: $panelContentPadding;
+        border: $panelContentBorder;
+        color: $panelContentTextColor;
+    }
+
+    .ui-progressbar {
+        top: 0;
+    }
+}
+
+.ui-fileupload-choose {
+    &:not(.ui-state-disabled):hover {
+        background-color: $buttonHoverBgColor;
+        color: $buttonHoverTextColor;
+        border-color: $buttonHoverBorderColor;
+    }
+
+    &:not(.ui-state-disabled):active {
+        background-color: $buttonActiveBgColor;
+        color: $buttonActiveTextColor;
+        border-color: $buttonActiveBorderColor;
+    }
+
+    &.ui-state-focus {
+        outline: $buttonFocusOutline;
+        outline-offset: $buttonFocusOutlineOffset;
+        @include shadow($buttonFocusShadow);
+    }
+}

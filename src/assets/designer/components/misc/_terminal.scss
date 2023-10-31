@@ -1,0 +1,16 @@
+.ui-terminal {
+    background-color: $panelContentBgColor;
+    color: $panelContentTextColor;
+    border: $panelContentBorder;
+    padding: $panelContentPadding;
+
+    .ui-terminal-input {
+        font-size: $fontSize;
+        font-family: $fontFamily;
+        height: $fontSize + 2;
+    }
+
+    .ui-terminal-command {
+        height: $fontSize + 2;
+    }
+}

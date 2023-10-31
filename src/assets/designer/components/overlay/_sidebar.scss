@@ -1,0 +1,15 @@
+.ui-sidebar {
+    background-color: $panelContentBgColor;
+    color: $panelContentTextColor;
+    padding: $panelContentPadding;
+    border: $overlayContentBorder;
+    @include shadow($overlayContainerShadow);
+
+    .ui-sidebar-close {
+        color: $textSecondaryColor;
+
+        &:hover {
+            color: $textColor;
+        }
+    }
+}
