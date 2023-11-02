@@ -1,0 +1,35 @@
+<div class="dialog-wrapper">
+
+  <mat-dialog-content>
+    <mat-error *ngIf="!proCodigoVal">Código obligatoria</mat-error>
+    <mat-error *ngIf="!proProvinciaVal">Población obligatoria</mat-error>
+
+    <form [formGroup]="camposEditar" class="w-100 p-d-flex p-flex-column p-ai-center ng-untouched ng-pristine ng-valid">
+
+
+      <mat-form-field *ngIf="this.camposEditar.controls['id'].value!=null">
+        <mat-label>Identificador </mat-label>
+        <input matInput type="number" formControlName="id" readonly>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Código </mat-label>
+        <input matInput type="text" formControlName="proCodigo" maxlength="2">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Nombre provincia </mat-label>
+        <textarea matInput type="text" formControlName="proProvincia" maxlength="100"></textarea>
+      </mat-form-field>
+
+
+
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" cdkFocusInitial>Cancelar</button>
+    <button mat-button (click)="actualizarProvincias(data.id)">Guardar</button>
+    <button mat-button [disabled]="noDelete" (click)="eliminarProvincias(data.id)"
+      cdkFocusInitial>Eliminar</button>
+  </mat-dialog-actions>
+</div>

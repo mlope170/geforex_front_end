@@ -19,6 +19,7 @@ export class TablaActividadesComponent  {
 
   //dataSource: any;
   actividades: Actividades[]=[];
+  vacio:Actividades=new Actividades();
   mensaje: String;
 
 
@@ -65,12 +66,17 @@ export class TablaActividadesComponent  {
             this.actividades.forEach(dat=>{
               dat.actActividadtipoid=dat.actActividadtipoid;
               dat.actDescripcion=dat.actDescripcion;
-              dat.subtipoActividad=dat.for000Actividadessubtipos.astActividadsubtipoid+"-"+dat.for000Actividadessubtipos.astDescripcion;
+              dat.subtipoActividad=dat.for000Actividadessubtipo.astActividadsubtipoid+"-"+dat.for000Actividadessubtipo.astDescripcion;
             })
             this.dataSource.data=this.actividades;
 
 
 
+      }else{
+        //tabla vacia
+
+        this.actividades[0]=this.vacio;
+        this.dataSource.data=this.actividades;
       }
       console.log('pppppppppppppppppppppppppppp');
     })
@@ -87,8 +93,8 @@ export class TablaActividadesComponent  {
       width: '350px',
       height: '360px',
       data: {
-        id: actividades.actActividadid,
-        actastActividadsubtipoid:actividades.for000Actividadessubtipo.astActividadsubtipoid,
+        id: actividades.actActividadtipoid,
+        actActividadsubtipoid:actividades.for000Actividadessubtipo.astActividadsubtipoid,
         actCodigo:actividades.actCodigo,
         actDescripcion:actividades.actDescripcion,
         //dotDescripcion:tiposDomicilios.dotDescripcion

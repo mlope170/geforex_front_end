@@ -1,0 +1,42 @@
+<div class="dialog-wrapper">
+
+  <mat-dialog-content>
+    <mat-error *ngIf="!pobProvinciaidVal">Provincias obligatoria</mat-error>
+    <mat-error *ngIf="!pobPoblacionVal">Poblacion obligatoria</mat-error>
+
+    <form [formGroup]="camposEditar" class="w-100 p-d-flex p-flex-column p-ai-center ng-untouched ng-pristine ng-valid">
+
+
+      <mat-form-field *ngIf="this.camposEditar.controls['id'].value!=null">
+        <mat-label>Identificador </mat-label>
+        <input matInput type="number" formControlName="id" readonly>
+      </mat-form-field>
+
+      <!-- <mat-form-field >
+        <mat-label>Identificador </mat-label>
+        <input matInput type="number" formControlName="astActividadtipoid" readonly>
+      </mat-form-field> -->
+
+       <mat-form-field>
+        <mat-label>Provincia</mat-label>
+        <mat-select  formControlName="pobProvinciaid" >
+           <mat-option *ngFor="let tipo of provincias" [value]="tipo.proProvinciaid">
+            {{tipo.proCodigo}}-{{tipo.proProvincia}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Población </mat-label>
+        <input matInput type="text" formControlName="pobPoblacion" maxlength="100">
+      </mat-form-field>
+
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" cdkFocusInitial>Cancelar</button>
+    <button mat-button (click)="actualizarPoblaciones(data.id)">Guardar</button>
+    <button mat-button [disabled]="noDelete" (click)="eliminarPoblaciones(data.id)"
+      cdkFocusInitial>Eliminar</button>
+  </mat-dialog-actions>
+</div>

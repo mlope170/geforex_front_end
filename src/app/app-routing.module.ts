@@ -10,11 +10,17 @@ import { TablaTiposDomiciliosComponent } from './tabla-tipos-domicilios/tabla-ti
 import { TablaActividadesComponent } from './tabla-actividades/tabla-actividades.component';
 import { TablaActividadesTiposComponent } from './tabla-actividades-tipos/tabla-actividades-tipos.component';
 import { TablaActividadesSubtiposComponent } from './tabla-actividades-subtipos/tabla-actividades-subtipos.component';
+import { TablaRegistroEntradaComponent } from './tabla-registro-entrada/tabla-registro-entrada.component';
+import { TablaProvinciasComponent } from './tabla-provincias/tabla-provincias.component';
+import { TablaPoblacionesComponent } from './tabla-poblaciones/tabla-poblaciones.component';
 
 const routes: Routes = [
   //{path:'',redirectTo:'exp', pathMatch:'full'},
+  {path:'rutaTablaRegistroEntrada', component:TablaRegistroEntradaComponent},
   {path:'rutaTablaServiciosTerritoriales', component:TablaServiciosTerritorialesComponent},
   {path:'rutaTablaEspecies', component:TablaEspeciesComponent},
+  {path:'rutaTablaProvincias', component:TablaProvinciasComponent},
+  {path:'rutaTablaPoblaciones', component:TablaPoblacionesComponent},
   {path:'rutaTablaMunicipiosSigpac', component:TablaMunicipiosSigpacComponent},
   {path:'rutaTablaExpedientesTipos', component:TablaExpedientesTiposComponent},
   {path:'rutaTablaExpedientesEstados', component:TablaExpedientesEstadosComponent},

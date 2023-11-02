@@ -46,6 +46,12 @@ import { TablaActividadesTiposComponent } from './tabla-actividades-tipos/tabla-
 import { FormEditActividadesTiposComponent } from './tabla-actividades-tipos/components/form-edit-actividades-tipos/form-edit-actividades-tipos.component';
 import { TablaActividadesSubtiposComponent } from './tabla-actividades-subtipos/tabla-actividades-subtipos.component';
 import { FormEditActividadesSubtiposComponent } from './tabla-actividades-subtipos/components/form-edit-actividades-subtipos/form-edit-actividades-subtipos.component';
+import { TablaRegistroEntradaComponent } from './tabla-registro-entrada/tabla-registro-entrada.component';
+import { FormEditRegistroEntradaComponent } from './tabla-registro-entrada/components/form-edit-registro-entrada/form-edit-registro-entrada.component';
+import { TablaProvinciasComponent } from './tabla-provincias/tabla-provincias.component';
+import { FormEditProvinciasComponent } from './tabla-provincias/components/form-edit-provincias/form-edit-provincias.component';
+import { TablaPoblacionesComponent } from './tabla-poblaciones/tabla-poblaciones.component';
+import { FormEditPoblacionesComponent } from './tabla-poblaciones/components/form-edit-poblaciones/form-edit-poblaciones.component';
 
 
 
@@ -79,7 +85,13 @@ import { FormEditActividadesSubtiposComponent } from './tabla-actividades-subtip
    TablaActividadesTiposComponent,
    FormEditActividadesTiposComponent,
    TablaActividadesSubtiposComponent,
-   FormEditActividadesSubtiposComponent
+   FormEditActividadesSubtiposComponent,
+   TablaRegistroEntradaComponent,
+   FormEditRegistroEntradaComponent,
+   TablaProvinciasComponent,
+   FormEditProvinciasComponent,
+   TablaPoblacionesComponent,
+   FormEditPoblacionesComponent
 
   ],
   imports: [

@@ -1,0 +1,48 @@
+
+
+<mat-card>
+  <mat-card-header class="p-d-flex p-jc-between">
+    <h3>Mantenimiento de tabla "Poblaciones"</h3>
+  </mat-card-header>
+</mat-card>
+
+<br>
+<p>{{mensaje}}</p>
+<br>
+
+
+<div class="example-button-row">
+  <button mat-raised-button (click)="nuevo()">
+    Nuevo
+  </button>
+</div>
+<br>
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="pobPoblacionid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> ID. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.pobPoblacionid}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="codNombreProvincia">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> PROVINCIA. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.codNombreProvincia}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="for000Provincias" >
+    <mat-header-cell *matHeaderCellDef mat-sort-header>  </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.for000Provincias.proCodigo}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="pobPoblacion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>CÓDIGO </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.pobPoblacion}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editar(row)"
+    (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+</table>
+

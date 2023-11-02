@@ -11,6 +11,9 @@ import { TiposDomicilios } from '../entity/tipos-domicilios';
 import { Actividades } from '../entity/actividades';
 import { ActividadesTipos } from '../entity/actividades-tipos';
 import { ActividadesSubtipos } from '../entity/actividades-subtipos';
+import { RegistroEntrada } from '../entity/registro-entrada';
+import { Provincias } from '../entity/provincias';
+import { Poblaciones } from '../entity/poblaciones';
 
 
 @Injectable({
@@ -60,10 +63,10 @@ private baseURLdot13="http://localhost:8080/dot1/nuevo"
 private baseURLdot14="http://localhost:8080/dot1/eliminar"
 //url actividades
 
-private baseURLact="http://localhost:8080/act/listar"
-private baseURLact2="http://localhost:8080/act/actualizar"
-private baseURLact3="http://localhost:8080/act/nuevo"
-private baseURLact4="http://localhost:8080/act/eliminar"
+private baseURLact="http://localhost:8080/acti/listar"
+private baseURLact2="http://localhost:8080/acti/actualizar"
+private baseURLact3="http://localhost:8080/acti/nuevo"
+private baseURLact4="http://localhost:8080/acti/eliminar"
 
 //url actividades tipos
 private baseURLati="http://localhost:8080/ati/listar"
@@ -76,6 +79,27 @@ private baseURLast="http://localhost:8080/ast/listar"
 private baseURLast2="http://localhost:8080/ast/actualizar"
 private baseURLast3="http://localhost:8080/ast/nuevo"
 private baseURLast4="http://localhost:8080/ast/eliminar"
+
+//url registro de entrada
+private baseURLree="http://localhost:8080/ree/listar"
+private baseURLree2="http://localhost:8080/ree/actualizar"
+private baseURLree3="http://localhost:8080/ree/nuevo"
+private baseURLree4="http://localhost:8080/ree/eliminar"
+
+//url provincias
+
+private baseURLpro="http://localhost:8080/pro/listar"
+private baseURLpro2="http://localhost:8080/pro/actualizar"
+private baseURLpro3="http://localhost:8080/pro/nuevo"
+private baseURLpro4="http://localhost:8080/pro/eliminar"
+
+//url poblaciones
+
+private baseURLpob="http://localhost:8080/pob/listar"
+private baseURLpob2="http://localhost:8080/pob/actualizar"
+private baseURLpob3="http://localhost:8080/pob/nuevo"
+private baseURLpob4="http://localhost:8080/pob/eliminar"
+
 
 
 
@@ -272,11 +296,13 @@ obtenerActividades():Observable<Actividades[]>
 
 
 actualizarActividades(id: number, actividades: Actividades){
+  actividades.for000Actividadessubtipo.astActividadsubtipoid=actividades.actActividadsubtipoid;
   return this.httpClient.put(`${this.baseURLact2}/${id}`,actividades)
 
 
 }
 nuevoActividades(actividades: Actividades){
+  actividades.for000Actividadessubtipo.astActividadsubtipoid=actividades.actActividadsubtipoid;
   return this.httpClient.post(`${this.baseURLact3}`,actividades)
 
 
@@ -336,6 +362,84 @@ nuevoActividadesSubtipos(actividadesSubtipos: ActividadesSubtipos){
 
 eliminarActividadesSubtipos(id:number){
   return this.httpClient.delete(`${this.baseURLast4}/${id}`);
+}
+
+
+//TABLA REGISTRO DE ENTRADA
+
+obtenerRegistroEntrada():Observable<RegistroEntrada[]>
+{
+
+  // console.log(this.httpClient.get<DatosExpediente[]>(`${this.baseURL}`));
+   return this.httpClient.get<RegistroEntrada[]>(`${this.baseURLree}`);
+}
+
+
+actualizarRegistroEntrada(id: number, registroEntrada: RegistroEntrada){
+  return this.httpClient.put(`${this.baseURLree2}/${id}`,registroEntrada)
+
+
+}
+nuevoRegistroEntrada(registroEntrada: RegistroEntrada){
+  return this.httpClient.post(`${this.baseURLree3}`,registroEntrada)
+
+
+}
+
+eliminarRegistroEntrada(id:number){
+  return this.httpClient.delete(`${this.baseURLree4}/${id}`);
+}
+
+//TABLA PROVINCIAS
+
+obtenerProvincias():Observable<Provincias[]>
+{
+
+  // console.log(this.httpClient.get<DatosExpediente[]>(`${this.baseURL}`));
+   return this.httpClient.get<Provincias[]>(`${this.baseURLpro}`);
+}
+
+
+actualizarProvincias(id: number, provincias: Provincias){
+  return this.httpClient.put(`${this.baseURLpro2}/${id}`,provincias)
+
+
+}
+nuevoProvincias(provincias: Provincias){
+  return this.httpClient.post(`${this.baseURLpro3}`,provincias)
+
+
+}
+
+eliminarProvincias(id:number){
+  return this.httpClient.delete(`${this.baseURLpro4}/${id}`);
+}
+
+//TABLA POBLACIONES
+
+obtenerPoblaciones():Observable<Poblaciones[]>
+{
+
+  // console.log(this.httpClient.get<DatosExpediente[]>(`${this.baseURL}`));
+   return this.httpClient.get<Poblaciones[]>(`${this.baseURLpob}`);
+}
+
+
+actualizarPoblaciones(id: number, poblaciones: Poblaciones){
+  poblaciones.for000Provincias.proProvinciaid=poblaciones.pobProvinciaid;
+  return this.httpClient.put(`${this.baseURLpob2}/${id}`,poblaciones)
+
+
+}
+nuevoPoblaciones(poblaciones: Poblaciones){
+  poblaciones.for000Provincias.proProvinciaid=poblaciones.pobProvinciaid;
+  return this.httpClient.post(`${this.baseURLpob3}`,poblaciones)
+
+
+}
+
+eliminarPoblaciones(id:number){
+  return this.httpClient.delete(`${this.baseURLpob4}/${id}`);
 }
 
 

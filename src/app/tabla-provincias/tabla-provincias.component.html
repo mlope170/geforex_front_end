@@ -1,0 +1,44 @@
+
+
+<mat-card>
+  <mat-card-header class="p-d-flex p-jc-between">
+    <h3>Mantenimiento de tabla "Provincias"</h3>
+  </mat-card-header>
+</mat-card>
+
+<br>
+<p>{{mensaje}}</p>
+<br>
+
+
+<div class="example-button-row">
+  <button mat-raised-button (click)="nuevo()">
+    Nuevo
+  </button>
+</div>
+<br>
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="proProvinciaid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> ID. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.proProvinciaid}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="proCodigo">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> CÓDIGO. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.proCodigo}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="proProvincia">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPCION </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.proProvincia}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editar(row)"
+    (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+</table>
+

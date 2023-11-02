@@ -128,4 +128,37 @@ export class MenuPrincipalComponent implements OnInit{
     });
   }
 
+  goToTablaRegistroEntrada(){
+
+    this.router.navigate(['/rutaTablaRegistroEntrada']).then(e =>{
+      if (e){
+        console.log("good work")
+      }else{
+        console.log("bad work")
+      }
+    });
+  }
+
+  goToTablaProvincias(){
+
+    this.router.navigate(['/rutaTablaProvincias']).then(e =>{
+      if (e){
+        console.log("good work")
+      }else{
+        console.log("bad work")
+      }
+    });
+  }
+
+    goToTablaPoblaciones(){
+
+      this.router.navigate(['/rutaTablaPoblaciones']).then(e =>{
+        if (e){
+          console.log("good work")
+        }else{
+          console.log("bad work")
+        }
+      });
+  }
+
 }

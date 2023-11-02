@@ -31,6 +31,7 @@
     <mat-cell *matCellDef="let element"> {{element.subtipoActividad}} </mat-cell>
   </ng-container>
 
+  <!-- al no estar en displayedColumns en el ts no se muestra esta columna en la tabla -->
   <ng-container matColumnDef="for000Actividadessubtipo" >
     <mat-header-cell *matHeaderCellDef mat-sort-header> TIPO ACTIVIDAD. </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.for000Actividadessubtipos.astActividadsubtipoid}}-{{element.for000Actividadessubtipos.astDescripcion}}</mat-cell>
